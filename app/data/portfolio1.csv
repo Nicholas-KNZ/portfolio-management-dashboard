@@ -1,0 +1,5 @@
+Symbol,Name,Stückzahl,Kaufkurs,Kaufdatum,Aktueller Kurs,Wert
+AAPL,Apple Inc,50,145.00,2023-06-15,175.00,8750.00
+AAPL,Apple Inc,50,145.00,2023-06-20,175.00,8750.00
+MSFT,Microsoft Corp,30,250.00,2022-11-20,300.00,9000.00
+GOOGL,Alphabet Inc,10,2800.00,2023-01-05,3200.00,32000.00
