@@ -1,39 +1,27 @@
 # Import packages
 from dash import Dash, html, dcc
+import dash 
 import plotly.express as px
+import plotly.io as pio
 import pandas as pd
 import numpy as np 
 
-# Import Dummy Data 
-df = pd.read_csv('app/data/portfolio1.csv')
-
-# Create Asset Allocation Chart 
-# Calcualte Allocation 
-
-df_pie = pd.concat([df["Symbol"], df["Wert"] / np.sum(df["Wert"])], axis=1)
-
-# Group by company
-df_pie = df_pie.groupby(["Symbol"], as_index=False).sum()
-
-# Create pie chart
-fig = px.pie(df_pie, values='Wert', names='Symbol', title='Portfolio Pie Chart')
-
-
-
+# Unterschied dash - Dash - pcc usw. 
 
 # Initialize the app
-app = Dash()
+app = Dash(use_pages=True)
 
 # App layout
 
 app.layout = html.Div(children=[
     html.H1('Portfolio Manager'),
-    dcc.Graph(
-        id='portfolio-pie',
-        figure=fig
-    )
+    html.Div(
+        [dcc.Link(children=page["name"], href=page["path"]) for page in dash.page_registry.values()]
+        ),
+    dash.page_container
+
 ])
 
 # Run the app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
