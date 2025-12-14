@@ -1,4 +1,4 @@
-#!/Users/nicholaskunze/Desktop/CodingProjects/market-signal-dashboard/venv/bin/python3.12
+#!/Users/nicholaskunze/Desktop/CodingProjects/portfolio-management-dashboard/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
